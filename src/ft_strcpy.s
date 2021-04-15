@@ -27,6 +27,7 @@ mov		bl, 0
 	inc rax
 	jmp .loop
 .return:
+	mov byte [rdi + rax], 0
 	mov rax, rdi
 	ret
 

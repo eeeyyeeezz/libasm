@@ -25,7 +25,6 @@ int			main(void)
 	printf("MEIN 'ABOBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' [%zu]\n", ft_strlen("ABOBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
 	printf("ORIG ZERO [%zu]\n", strlen(""));
 	printf("ORIG ZERO [%zu]\n", ft_strlen(""));
-	// printf("\n");
 	char		str1[5];
 	char		*str2 = "Bois";
 	printf(">_________STRCPY_____________<\n");
