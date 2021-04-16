@@ -1,18 +1,11 @@
-; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;
-;                                                                              ;
-;                                                         :::      ::::::::    ;
-;    ft_strdup.s                                        :+:      :+:    :+:    ;
-;                                                     +:+ +:+         +:+      ;
-;    By: gmorra <gmorra@student.42.fr>              +#+  +:+       +#+         ;
-;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2021/04/15 by gmorra                     #+#    #+#              ;
-;    Updated: 2021/04/15 by gmorra                    ###   ########.fr        ;
-;                                                                              ;
-; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;
+;						;
+;	ft_strdup.s			;
+;	author: gmorra		;
+;	date:	16.04.21	;
+;						;
 
 global		_ft_strdup
-
-		section .text
+section .text
 extern _malloc, _ft_strlen, _ft_strcpy
 
 

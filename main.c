@@ -1,20 +1,10 @@
-/* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
-/*                                                                              */
-/*                                                         :::      ::::::::    */
-/*    main.c                                             :+:      :+:    :+:    */
-/*                                                     +:+ +:+         +:+      */
-/*    By: gmorra <gmorra@student.42.fr>              +#+  +:+       +#+         */
-/*                                                 +#+#+#+#+#+   +#+            */
-/*    Created: 2021/04/15 by gmorra                     #+#    #+#              */
-/*    Updated: 2021/04/15 by gmorra                    ###   ########.fr        */
-/*                                                                              */
-/* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+/*						*/
+/*	main.c				*/
+/*	author: gmorra		*/
+/*	date:	16.04.21	*/
+/*						*/
 
 #include "libasm.h"
-
-size_t	ft_strlen(char *str);
-char 	*ft_strcpy(char *dst, const char *src);
-int		ft_strcmp(char *s1, char *s2);
 
 int			main(void)
 {
@@ -77,7 +67,31 @@ int			main(void)
 	printf("ORIG from [] [%s]\n", s6);
 	free(s6);
 	printf(">_________WRITE_____________<\n");
-
-
+	printf("orig write [%zd]\n", write(1, "ORIG WRITE [1] FD\n", 18));
+	printf("mein write [%zd]\n", ft_write(1, "MEIN WRITE [1] FD\n", 18));
+	int		fd = open("write.txt", O_RDWR | O_APPEND);
+	char someShit[] = "ORIG WRITE TO OPEN FD\n";
+	printf("orig return fd [%zd]\n", write(fd, someShit, 22));
+	printf("mein return fd [%zd]\n", ft_write(fd, "MEIN WRITE TO OPEN FD\n", 22));
+	printf("orig return -1 [%zd]\n", write(-1, "ORIG WRONG FD\n", 16));
+	printf("mein return -1 [%zd]\n", ft_write(-1, "ORIG WRONG FD\n", 16));
+	printf(">_________READ______________<\n");
+	char	buf[100];
+	read(0, buf, 100);
+	write(1, buf, ft_strlen(buf));
+	char	buf2[100];
+	ft_read(0, buf2, 100);
+	write(1, buf2, ft_strlen(buf2));
+	char	buf4[100];
+	ft_read(0, buf4, 100);
+	printf("FAIL FD [%zd]\n", write(-1, buf4, ft_strlen(buf2)));
+	char	open555[1000];
+	fd = open("write.txt", O_RDWR);
+	read(fd, open555, 1000);
+	printf("ORIG [%s]\n", open555);
+	char	open666[1000];
+	fd = open("write.txt", O_RDWR);
+	ft_read(fd, open666, 1000);
+	printf("MEIN [%s]\n", open666);
 }
 

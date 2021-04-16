@@ -1,20 +1,16 @@
-/* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
-/*                                                                              */
-/*                                                         :::      ::::::::    */
-/*    libasm.h                                           :+:      :+:    :+:    */
-/*                                                     +:+ +:+         +:+      */
-/*    By: gmorra <gmorra@student.42.fr>              +#+  +:+       +#+         */
-/*                                                 +#+#+#+#+#+   +#+            */
-/*    Created: 2021/04/15 by gmorra                     #+#    #+#              */
-/*    Updated: 2021/04/15 by gmorra                    ###   ########.fr        */
-/*                                                                              */
-/* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+/*						*/
+/*	libasm.h			*/
+/*	author: gmorra		*/
+/*	date:	16.04.21	*/
+/*						*/
 
 #ifndef LIBASM_H
 # define LIBASM_H
 # include <printf.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 size_t			ft_strlen(char *str);
 char 			*ft_strcpy(char *dst, const char *src);
